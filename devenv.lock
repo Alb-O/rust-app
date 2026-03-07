@@ -3,11 +3,11 @@
     "agents-instructions-builder": {
       "flake": false,
       "locked": {
-        "lastModified": 1772880157,
-        "narHash": "sha256-WjbImIV7fpIldyhI1HBinzYVP9p59f7818kKozkTmHw=",
+        "lastModified": 1772881971,
+        "narHash": "sha256-vEUtNWlZB4Hsh7zuQbBhAgQ1NZJfhOZAw1cUxGAOrmc=",
         "ref": "main",
-        "rev": "c5bdf79aab76063fd4569a96b43059250ba8c17c",
-        "revCount": 2,
+        "rev": "3c9e0e7c0eded81c4fa4629fcfb24ae24e58148c",
+        "revCount": 3,
         "type": "git",
         "url": "https://github.com/Alb-O/agents-instructions-builder.git"
       },
@@ -74,11 +74,11 @@
     "committer": {
       "flake": false,
       "locked": {
-        "lastModified": 1772879998,
-        "narHash": "sha256-hqgTdPAR0NPspwIUQjSdus1XQEMDvVcjqjWLZ/wpYYI=",
+        "lastModified": 1772882027,
+        "narHash": "sha256-pOzAvoB1YeWIm8LBYSS87QfT6OTHiZ5GH9QMfmbZv14=",
         "ref": "main",
-        "rev": "220360e66e0f3cae29cefbe71b6a277bced5f6c4",
-        "revCount": 1,
+        "rev": "18910277f290030c19f73d3540206c010735a384",
+        "revCount": 3,
         "type": "git",
         "url": "https://github.com/Alb-O/committer.git"
       },
