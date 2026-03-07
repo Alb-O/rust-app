@@ -1,0 +1,13 @@
+inputs:
+  nixpkgs:
+    url: github:cachix/devenv-nixpkgs/rolling
+  rust-overlay:
+    url: github:oxalica/rust-overlay
+    inputs:
+      nixpkgs:
+        follows: nixpkgs
+  rust-base:
+    url: github:Alb-O/rust-base-devenv-polyrepo
+    flake: false
+imports:
+  - rust-base
