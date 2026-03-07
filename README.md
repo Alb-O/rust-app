@@ -1,6 +1,6 @@
-# Order Quote CLI (Consumer Repo)
+# Order Quote CLI (rust-app)
 
-Practical consumer example for the Rust polyrepo setup.
+Practical app repo for the Rust polyrepo setup.
 
 This repository imports:
 - `github:Alb-O/rust-base-devenv-polyrepo` for the shared nightly Rust toolchain and checks.
@@ -23,6 +23,18 @@ cargo run -- quote 12500 15 express --fragile
 devenv shell
 quote-example
 health
+packaged-health
+```
+
+## Output for other repos
+
+This repo exports a package output:
+- `outputs.order-quote-cli`
+
+Another repo can import this repo and execute:
+
+```bash
+${config.outputs.order-quote-cli}/bin/order-quote-cli health
 ```
 
 ## Validate

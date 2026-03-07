@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 
 {
   env = {
@@ -22,11 +22,18 @@
     health.exec = ''
       cargo run -- health | jq .
     '';
+
+    packaged-health.exec = ''
+      ${config.outputs.order-quote-cli}/bin/order-quote-cli health | jq .
+    '';
   };
+
+  outputs.order-quote-cli = config.languages.rust.import ./. {};
 
   enterShell = ''
     echo "Run: quote-example"
     echo "Run: health"
+    echo "Run: packaged-health"
   '';
 
   enterTest = ''
