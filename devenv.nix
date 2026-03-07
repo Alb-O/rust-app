@@ -10,9 +10,6 @@ let
   appAgentsText = builtins.readFile ./AGENTS.md;
 in
 {
-  agentsInstructions.materializePath = ".codex/config.toml";
-  agentsInstructions.materializeTemplate = "codexConfigToml";
-
   agentsInstructions.ownFragments.rust-app = [ appAgentsText ];
   agentsInstructions.mergedFragments = lib.mkAfter [ appAgentsText ];
 
