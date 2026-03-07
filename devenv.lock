@@ -1,5 +1,22 @@
 {
   "nodes": {
+    "agents-instructions-builder": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1772880157,
+        "narHash": "sha256-WjbImIV7fpIldyhI1HBinzYVP9p59f7818kKozkTmHw=",
+        "ref": "main",
+        "rev": "c5bdf79aab76063fd4569a96b43059250ba8c17c",
+        "revCount": 2,
+        "type": "git",
+        "url": "https://github.com/Alb-O/agents-instructions-builder.git"
+      },
+      "original": {
+        "ref": "main",
+        "type": "git",
+        "url": "https://github.com/Alb-O/agents-instructions-builder.git"
+      }
+    },
     "cachix": {
       "inputs": {
         "devenv": [
@@ -52,17 +69,6 @@
         "ref": "latest",
         "repo": "cachix",
         "type": "github"
-      }
-    },
-    "agents-instructions-builder": {
-      "flake": false,
-      "locked": {
-        "path": "/home/albert/devenv/repos/agents-instructions-builder",
-        "type": "path"
-      },
-      "original": {
-        "path": "/home/albert/devenv/repos/agents-instructions-builder",
-        "type": "path"
       }
     },
     "crate2nix": {
@@ -585,12 +591,17 @@
     "rust-base": {
       "flake": false,
       "locked": {
-        "path": "/home/albert/devenv/repos/rust-base",
-        "type": "path"
+        "lastModified": 1772856082,
+        "narHash": "sha256-pvGGH4FkvylRnKcBQjYwesvyFzQ6kkQ4luta3UF2e5I=",
+        "owner": "Alb-O",
+        "repo": "rust-base-devenv-polyrepo",
+        "rev": "a86a4fad301f476ac94b66d5f8be51ec08e2cf90",
+        "type": "github"
       },
       "original": {
-        "path": "/home/albert/devenv/repos/rust-base",
-        "type": "path"
+        "owner": "Alb-O",
+        "repo": "rust-base-devenv-polyrepo",
+        "type": "github"
       }
     },
     "rust-overlay": {
