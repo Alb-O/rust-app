@@ -17,10 +17,10 @@ inputs:
   committer:
     url: git+https://github.com/Alb-O/committer.git?ref=main
     flake: false
-  rust-base:
-    url: github:Alb-O/rust-base-devenv-polyrepo
+  rust-env:
+    url: github:Alb-O/rust-env
     flake: false
 imports:
   - materializer
   - committer
-  - rust-base
+  - rust-env

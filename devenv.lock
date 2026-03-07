@@ -1,22 +1,5 @@
 {
   "nodes": {
-    "materializer": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1772881971,
-        "narHash": "sha256-vEUtNWlZB4Hsh7zuQbBhAgQ1NZJfhOZAw1cUxGAOrmc=",
-        "ref": "main",
-        "rev": "3c9e0e7c0eded81c4fa4629fcfb24ae24e58148c",
-        "revCount": 3,
-        "type": "git",
-        "url": "https://github.com/Alb-O/materializer.git"
-      },
-      "original": {
-        "ref": "main",
-        "type": "git",
-        "url": "https://github.com/Alb-O/materializer.git"
-      }
-    },
     "cachix": {
       "inputs": {
         "devenv": [
@@ -425,6 +408,23 @@
         "type": "github"
       }
     },
+    "materializer": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1772881971,
+        "narHash": "sha256-vEUtNWlZB4Hsh7zuQbBhAgQ1NZJfhOZAw1cUxGAOrmc=",
+        "ref": "main",
+        "rev": "3c9e0e7c0eded81c4fa4629fcfb24ae24e58148c",
+        "revCount": 3,
+        "type": "git",
+        "url": "https://github.com/Alb-O/materializer.git"
+      },
+      "original": {
+        "ref": "main",
+        "type": "git",
+        "url": "https://github.com/Alb-O/materializer.git"
+      }
+    },
     "nix-test-runner": {
       "flake": false,
       "locked": {
@@ -597,28 +597,28 @@
     },
     "root": {
       "inputs": {
-        "materializer": "materializer",
         "committer": "committer",
         "crate2nix": "crate2nix",
         "devenv": "devenv",
+        "materializer": "materializer",
         "nixpkgs": "nixpkgs_4",
-        "rust-base": "rust-base",
+        "rust-env": "rust-env",
         "rust-overlay": "rust-overlay"
       }
     },
-    "rust-base": {
+    "rust-env": {
       "flake": false,
       "locked": {
-        "lastModified": 1772856082,
-        "narHash": "sha256-pvGGH4FkvylRnKcBQjYwesvyFzQ6kkQ4luta3UF2e5I=",
+        "lastModified": 1772918386,
+        "narHash": "sha256-fIUq5t4H1WlI1hT2Cw/hxX4EjTCR5XjpWCKh7FHCrcI=",
         "owner": "Alb-O",
-        "repo": "rust-base-devenv-polyrepo",
-        "rev": "a86a4fad301f476ac94b66d5f8be51ec08e2cf90",
+        "repo": "rust-env",
+        "rev": "e0be3444f44cf0803247bb200f766db6cbe1d946",
         "type": "github"
       },
       "original": {
         "owner": "Alb-O",
-        "repo": "rust-base-devenv-polyrepo",
+        "repo": "rust-env",
         "type": "github"
       }
     },
