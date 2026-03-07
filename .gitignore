@@ -1,5 +1,7 @@
 .devenv/
 .direnv/
 direnv/
+devenv.lock
+*.local.*
+*.override.*
 target/
-AGENTS.override.md
