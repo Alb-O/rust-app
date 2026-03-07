@@ -1,4 +1,4 @@
-{ pkgs, config, ... }:
+{ pkgs, config, lib, ... }:
 
 let
   orderQuoteCli = pkgs.rustPlatform.buildRustPackage {
@@ -7,8 +7,12 @@ let
     src = ./.;
     cargoLock.lockFile = ./Cargo.lock;
   };
+  appAgentsText = builtins.readFile ./AGENTS.md;
 in
 {
+  agentsInstructions.ownFragments.rust-app = [ appAgentsText ];
+  agentsInstructions.mergedFragments = lib.mkAfter [ appAgentsText ];
+
   env = {
     SERVICE_NAME = "order-quote-cli";
   };

@@ -4,6 +4,7 @@ Practical app repo for the Rust polyrepo setup.
 
 This repository imports:
 - `github:Alb-O/rust-base-devenv-polyrepo` for the shared nightly Rust toolchain and checks.
+- `github:Alb-O/agents-instructions-builder` for merged agents instructions output.
 
 The app is a CLI used by commerce teams to generate shipping quotes.
 
@@ -28,8 +29,9 @@ packaged-health
 
 ## Output for other repos
 
-This repo exports a package output:
+This repo exports:
 - `outputs.order-quote-cli`
+- `outputs.agents_instructions` (merged instructions from import chain)
 
 Another repo can import this repo and execute:
 

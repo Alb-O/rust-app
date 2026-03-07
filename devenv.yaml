@@ -11,8 +11,12 @@ inputs:
     inputs:
       nixpkgs:
         follows: nixpkgs
+  agents-instructions-builder:
+    url: github:Alb-O/agents-instructions-builder
+    flake: false
   rust-base:
     url: github:Alb-O/rust-base-devenv-polyrepo
     flake: false
 imports:
+  - agents-instructions-builder
   - rust-base

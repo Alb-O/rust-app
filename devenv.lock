@@ -54,6 +54,17 @@
         "type": "github"
       }
     },
+    "agents-instructions-builder": {
+      "flake": false,
+      "locked": {
+        "path": "/home/albert/devenv/repos/agents-instructions-builder",
+        "type": "path"
+      },
+      "original": {
+        "path": "/home/albert/devenv/repos/agents-instructions-builder",
+        "type": "path"
+      }
+    },
     "crate2nix": {
       "inputs": {
         "cachix": "cachix",
@@ -563,6 +574,7 @@
     },
     "root": {
       "inputs": {
+        "agents-instructions-builder": "agents-instructions-builder",
         "crate2nix": "crate2nix",
         "devenv": "devenv",
         "nixpkgs": "nixpkgs_4",
@@ -573,17 +585,12 @@
     "rust-base": {
       "flake": false,
       "locked": {
-        "lastModified": 1772854128,
-        "narHash": "sha256-f/TnlSQyHGndZImSdIJ5foEqfU6VdlneWRjPQX7/yD8=",
-        "owner": "Alb-O",
-        "repo": "rust-base-devenv-polyrepo",
-        "rev": "bfc34bc30f49dc6ccd496f6557ff9fd489bc4d60",
-        "type": "github"
+        "path": "/home/albert/devenv/repos/rust-base",
+        "type": "path"
       },
       "original": {
-        "owner": "Alb-O",
-        "repo": "rust-base-devenv-polyrepo",
-        "type": "github"
+        "path": "/home/albert/devenv/repos/rust-base",
+        "type": "path"
       }
     },
     "rust-overlay": {
