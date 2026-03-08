@@ -4,8 +4,9 @@ target/
 result
 
 # `devenv.lock` is ignored for fast local-first polyrepo workflow without diff churn.
-# `Cargo.lock` is tracked for reproducible binary builds and downstream source imports.
 devenv.lock
 
 *.local.*
 *.override.*
+!*.local.example.*
+!*.override.example.*
