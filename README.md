@@ -31,7 +31,7 @@ packaged-health
 
 This repo exports:
 - `outputs.order-quote-cli`
-- `outputs.agents_instructions` (merged instructions from import chain)
+- `outputs.materialized_text` (merged instructions from import chain)
 
 Another repo can import this repo and execute:
 

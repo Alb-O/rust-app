@@ -10,8 +10,8 @@ let
   appAgentsText = builtins.readFile ./AGENTS.md;
 in
 {
-  agentsInstructions.ownFragments.rust-app = [ appAgentsText ];
-  agentsInstructions.mergedFragments = lib.mkAfter [ appAgentsText ];
+  materializer.ownFragments.rust-app = [ appAgentsText ];
+  materializer.mergedFragments = lib.mkAfter [ appAgentsText ];
 
   env = {
     SERVICE_NAME = "order-quote-cli";
