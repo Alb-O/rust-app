@@ -6,21 +6,39 @@ inputs:
     inputs:
       nixpkgs:
         follows: nixpkgs
+  treefmt-nix:
+    url: github:numtide/treefmt-nix
+    inputs:
+      nixpkgs:
+        follows: nixpkgs
+  git-hooks:
+    url: github:cachix/git-hooks.nix
+    inputs:
+      nixpkgs:
+        follows: nixpkgs
   crate2nix:
     url: github:nix-community/crate2nix
     inputs:
       nixpkgs:
         follows: nixpkgs
   materializer:
-    url: git+https://github.com/Alb-O/materializer.git?ref=main
+    url: github:Alb-O/materializer
     flake: false
   committer:
-    url: git+https://github.com/Alb-O/committer.git?ref=main
+    url: github:Alb-O/committer
     flake: false
-  rust-env:
-    url: github:Alb-O/rust-env
+  env-rust:
+    url: github:Alb-O/env-rust
+    flake: false
+  env-docs:
+    url: github:Alb-O/env-docs
+    flake: false
+  env-local-overrides:
+    url: github:Alb-O/env-local-overrides
     flake: false
 imports:
   - materializer
   - committer
-  - rust-env
+  - env-rust
+  - env-docs
+  - env-local-overrides
