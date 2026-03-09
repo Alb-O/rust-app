@@ -9,7 +9,7 @@ let
   };
 in
 {
-  instructions.fragments = lib.mkAfter [ (builtins.readFile ./AGENTS.md) ];
+  instructions.instructions = lib.mkAfter [ (builtins.readFile ./AGENTS.md) ];
 
   env = {
     SERVICE_NAME = "order-quote-cli";

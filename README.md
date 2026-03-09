@@ -2,7 +2,7 @@
 
 Practical app repo for the Rust polyrepo setup.
 
-Uses `env-rust` and `materializer`.
+Uses `dvnv-rust-env` and `composer`.
 
 The app is a CLI used by commerce teams to generate shipping quotes.
 
@@ -30,7 +30,7 @@ packaged-health
 This repo exports:
 
 - `outputs.order-quote-cli`
-- `outputs.materialized_text` (merged instructions from import chain)
+- `outputs.composed_instructions` (composed instructions from the import chain)
 
 Other repos can run:
 
