@@ -7,17 +7,10 @@
 
 let
   standaloneProjectRoot = toString ./.;
-  generatedSource = pkgs.runCommand "order-quote-cli-source" { } ''
-    mkdir -p "$out"
-    cp -R ${./.}/. "$out"/
-    chmod -R u+w "$out"
-    rm -f "$out/Cargo.toml"
-    cp ${config.outputs.cargo_manifest} "$out/Cargo.toml"
-  '';
   orderQuoteCli = pkgs.rustPlatform.buildRustPackage {
     pname = "order-quote-cli";
     version = "0.1.0";
-    src = generatedSource;
+    src = config.outputs.cargo_source_tree;
     cargoLock.lockFile = ./Cargo.lock;
   };
 in
@@ -27,11 +20,6 @@ in
   "rust-env".managedCargo = {
     enable = true;
     specPath = "${standaloneProjectRoot}/Cargo.dvnv.toml";
-    outputPath =
-      let
-        currentProjectRoot = toString config.devenv.root;
-      in
-      if currentProjectRoot == standaloneProjectRoot then "Cargo.toml" else null;
   };
 
   composer.ownInstructions = {
