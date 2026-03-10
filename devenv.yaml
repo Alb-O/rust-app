@@ -39,6 +39,5 @@ inputs:
 imports:
   - dvnv-instructions-composer
   - agent-committer
-  - dvnv-rust-env
   - dvnv-docs-env
   - dvnv-local-inputs

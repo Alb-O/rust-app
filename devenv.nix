@@ -15,7 +15,7 @@ let
   };
 in
 {
-  imports = [ (inputs.dvnv-rust-env + "/modules/managed-cargo") ];
+  imports = [ (inputs.dvnv-rust-env + "/devenv.nix") ];
 
   rustEnv.managedCargo = {
     enable = true;
