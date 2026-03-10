@@ -8,7 +8,7 @@
 let
   standaloneProjectRoot = toString ./.;
   orderQuoteCli = pkgs.rustPlatform.buildRustPackage {
-    pname = "order-quote-cli";
+    pname = config.rustEnv.package.name;
     version = "0.1.0";
     src = config.outputs.cargo_source_tree;
     cargoLock.lockFile = ./Cargo.lock;
