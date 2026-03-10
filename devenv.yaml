@@ -30,9 +30,6 @@ inputs:
   dvnv-rust-env:
     url: github:Alb-O/dvnv-rust-env
     flake: false
-  dvnv-rust-deps:
-    url: path:../dvnv-rust-deps
-    flake: false
   dvnv-docs-env:
     url: github:Alb-O/dvnv-docs-env
     flake: false
@@ -43,6 +40,5 @@ imports:
   - dvnv-instructions-composer
   - agent-committer
   - dvnv-rust-env
-  - dvnv-rust-deps
   - dvnv-docs-env
   - dvnv-local-inputs

@@ -1,4 +1,5 @@
 {
+  inputs,
   pkgs,
   config,
   lib,
@@ -6,6 +7,7 @@
 }:
 
 let
+  standaloneProjectRoot = toString ./.;
   generatedSource = pkgs.runCommand "order-quote-cli-source" { } ''
     mkdir -p "$out"
     cp -R ${./.}/. "$out"/
@@ -21,7 +23,21 @@ let
   };
 in
 {
-  instructions.instructions = lib.mkAfter [ (builtins.readFile ./AGENTS.md) ];
+  imports = [ (inputs.dvnv-rust-env + "/modules/managed-cargo") ];
+
+  "rust-env".managedCargo = {
+    enable = true;
+    specPath = "${standaloneProjectRoot}/Cargo.dvnv.toml";
+    outputPath =
+      let
+        currentProjectRoot = toString config.devenv.root;
+      in
+      if currentProjectRoot == standaloneProjectRoot then "Cargo.toml" else null;
+  };
+
+  composer.ownInstructions = {
+    rust-app = [ (builtins.readFile ./AGENTS.md) ];
+  };
 
   env = {
     SERVICE_NAME = "order-quote-cli";

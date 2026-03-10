@@ -3,8 +3,11 @@
 Practical app repo for the Rust polyrepo setup.
 
 Uses `dvnv-rust-env` and `composer`.
-Its `Cargo.toml` is generated from a repo-owned `Cargo.deps.toml` plus the shared
-catalog in `dvnv-rust-deps`.
+Its `Cargo.toml` is generated from a repo-owned `Cargo.dvnv.toml` plus the shared
+catalog built into `dvnv-rust-env`.
+The base Rust environment and managed-Cargo behavior are imported from
+`inputs.dvnv-rust-env` inside `devenv.nix`, so downstream repos can still build
+`outputs.order-quote-cli`.
 
 The app is a CLI used by commerce teams to generate shipping quotes.
 
