@@ -17,7 +17,7 @@ in
 {
   imports = [ (inputs.dvnv-rust-env + "/modules/managed-cargo") ];
 
-  "rust-env".managedCargo = {
+  rustEnv.managedCargo = {
     enable = true;
     specPath = "${standaloneProjectRoot}/Cargo.dvnv.toml";
   };
