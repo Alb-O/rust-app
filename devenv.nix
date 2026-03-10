@@ -1,10 +1,22 @@
-{ pkgs, config, lib, ... }:
+{
+  pkgs,
+  config,
+  lib,
+  ...
+}:
 
 let
+  generatedSource = pkgs.runCommand "order-quote-cli-source" { } ''
+    mkdir -p "$out"
+    cp -R ${./.}/. "$out"/
+    chmod -R u+w "$out"
+    rm -f "$out/Cargo.toml"
+    cp ${config.outputs.cargo_manifest} "$out/Cargo.toml"
+  '';
   orderQuoteCli = pkgs.rustPlatform.buildRustPackage {
     pname = "order-quote-cli";
     version = "0.1.0";
-    src = ./.;
+    src = generatedSource;
     cargoLock.lockFile = ./Cargo.lock;
   };
 in
@@ -33,6 +45,10 @@ in
       cargo run -- health | jq .
     '';
 
+    show-cargo-manifest.exec = ''
+      cat ${config.outputs.cargo_manifest}
+    '';
+
     packaged-health.exec = ''
       ${orderQuoteCli}/bin/order-quote-cli health | jq .
     '';
@@ -41,6 +57,7 @@ in
   outputs.order-quote-cli = orderQuoteCli;
 
   enterShell = ''
+    echo "Run: show-cargo-manifest"
     echo "Run: quote-example"
     echo "Run: health"
     echo "Run: packaged-health"
@@ -50,6 +67,8 @@ in
     set -euo pipefail
 
     rustc --version | grep -E "nightly|dev"
+    grep -F 'version = "1.0.228"' Cargo.toml
+    grep -F 'version = "1.0.149"' Cargo.toml
     cargo run -- health | jq -e '.status == "ok"'
     cargo run -- quote 12500 15 overnight --fragile | jq -e '.eta_days == 1'
     cargo check --all-targets --all-features

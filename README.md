@@ -3,6 +3,8 @@
 Practical app repo for the Rust polyrepo setup.
 
 Uses `dvnv-rust-env` and `composer`.
+Its `Cargo.toml` is generated from a repo-owned `Cargo.deps.toml` plus the shared
+catalog in `dvnv-rust-deps`.
 
 The app is a CLI used by commerce teams to generate shipping quotes.
 
@@ -20,6 +22,7 @@ cargo run -- quote 12500 15 express --fragile
 
 ```bash
 devenv shell
+show-cargo-manifest
 quote-example
 health
 packaged-health
