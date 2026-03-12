@@ -15,11 +15,11 @@ let
   };
 in
 {
-  imports = [ (inputs.dvnv-rust-env + "/devenv.nix") ];
+  imports = [ (inputs.poly-rust-env + "/devenv.nix") ];
 
   rustEnv.managedCargo = {
     enable = true;
-    specPath = "${standaloneProjectRoot}/Cargo.dvnv.toml";
+    specPath = "${standaloneProjectRoot}/Cargo.poly.toml";
   };
 
   composer.ownInstructions = {
